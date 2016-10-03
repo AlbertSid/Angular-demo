@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="AngualrFormDamo">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="Description" content="angular" />
+		<title>ANGULAR</title>
+		<link rel="stylesheet" type="text/css" href="Style/main.css" />
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<!--<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>-->
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+		<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+		<script src="//npmcdn.com/angular-ui-router@0.3.1/release/angular-ui-router.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Components/Root.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Components/factory.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Components/directive.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Components/Router.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Components/controller.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-controller="RootApp">
+		<div ng-include="root" class="container" onFinishRender></div>
+	</body>
+
+</html>
