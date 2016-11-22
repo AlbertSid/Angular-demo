@@ -1,4 +1,4 @@
-var  AppDirect = angular.module('AppDirect', []);
+var AppDirect = angular.module('AppDirect', []);
 //console.log(AppDirect);
 AppDirect.directive('onFinishRender', ['$timeout', function($timeout) {
 	return {

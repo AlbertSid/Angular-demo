@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" lang="cn" ng-app="AngualrFormDamo" id="ng-app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE 8]>
+      	<script src="scripts/lib/ES/es5-shim.min.js"></script>
+		<script src="scripts/lib/ES/es5-sham.min.js"></script>
+		<script src="scripts/lib/ES/json3.min.js"></script>
+        <style>
+            .ng-hide {
+                display: none !important;
+            }
+        </style>
+        <script>
+	        document.createElement('ng-include');
+	        document.createElement('ng-pluralize');
+	        document.createElement('ng-view');
+	          // Optionally these for CSS
+	        document.createElement('ng:include');
+	        document.createElement('ng:pluralize');
+	        document.createElement('ng:view');
+        </script>
+	    <script type="text/javascript">
+		    if (!window.console || !console.firebug) {
+		        var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+
+		        window.console = {};
+		        for (var i = 0; i < names.length; ++i) {
+		            window.console[names[i]] = function() {}
+		        }
+		    }
+	    </script>
+    <![endif]-->
+    <script src="scripts/lib/jquery/jquery.min.js"></script>
+    <script src="scripts/lib/angular/angular.min.js"></script>
+    <script src="scripts/lib/ui-router/angular-ui-router.min.js"></script>
+    <script src="scripts/lib/angular/angular-loader.min.js"></script>
+    <script src="scripts/lib/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <link rel="stylesheet" href="scripts/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="scripts/lib/bootstrap/css/bootstrap-theme.css">
+    <!--[if IE 8]>
+        <script src="scripts/lib/bootstrap/html5shiv.min.js"></script>
+        <script src="scripts/lib/bootstrap/respond.js"></script>
+        <script>
+            document.createElement('ui-view');
+        </script>
+    <![endif]-->
+ 	<script src="scripts/app/Root.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/app/factory.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/app/directive.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/app/Router.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/app/controller.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body ng-controller="RootApp">
+	<div ng-include="root" class="container" onFinishRender></div>
+</body>
+
+</html>

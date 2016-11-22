@@ -22,6 +22,7 @@ RootApp.controller('mainBox', ["$scope", "$rootScope",
 
 	}
 ]);
+
 var main = angular.module('mainBoxCtl', ['UiRouterCtl']);
 main.controller('home', ["$scope", "$rootScope", "MathService", "superCache",
 	function($scope, $rootScope, MathService, superCache) {

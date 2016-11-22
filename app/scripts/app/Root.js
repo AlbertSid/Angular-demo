@@ -1,4 +1,4 @@
-var Root = angular.module('AngualrFormDamo', [
+angular.module('AngualrFormDamo', [
 	'AppService',
 	'AppDirect',
 	'RootAppCtl',
@@ -17,9 +17,6 @@ var Root = angular.module('AngualrFormDamo', [
 		console.error(cause);
 	};
 }]);
-
-
-
 //var injector = angular.injector(['AngualrFormDamo']);
 //injector.invoke(['gitHubService', function(gitHubService) {
 //	//...
