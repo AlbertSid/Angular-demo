@@ -1,6 +1,6 @@
 /*!
  * gulp
- * $ npm install gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
+ * $ npm install gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
  */
 // Load plugins
 var gulp = require('gulp'),
@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
+    browserSync = require("browser-sync"),
     del = require('del');
 // Styles
 gulp.task('styles', function() {
@@ -25,6 +26,7 @@ gulp.task('styles', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
         .pipe(gulp.dest('dist/styles'))
+        .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
 });
 // Scripts
@@ -37,6 +39,7 @@ gulp.task('scripts', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('dist/scripts'))
+        .pipe(browserSync.stream())
         .pipe(notify({ message: 'Scripts task complete' }));
 });
 // Images
@@ -44,6 +47,7 @@ gulp.task('images', function() {
     return gulp.src('app/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/images'))
+        .pipe(browserSync.stream())
         .pipe(notify({ message: 'Images task complete' }));
 });
 // Clean
@@ -66,4 +70,13 @@ gulp.task('watch', function() {
     livereload.listen();
     // Watch any files in dist/, reload on change
     gulp.watch(['dist/**']).on('change', livereload.changed);
+});
+
+gulp.task("serve", ['watch'], function() {
+    browserSync.init({
+        server : "./app/"
+    });
+    gulp.watch(["app/*.html","app/view/**/*.html"]).on("change", function() {
+        browserSync.reload;
+    });
 });
