@@ -61,7 +61,7 @@ gulp.task('clean', function(cb) {
 });
 
 //gulp.task('default', ['clean'], function() {
-gulp.task('default', ['clean','styles','scripts','images'], function(cb) {
+gulp.task('default', ['clean', 'styles', 'scripts', 'images'], function(cb) {
     //gulp.start('styles','scripts','images');
     //gulp.start(['styles','scripts','images']);
     //del(['app/dist/styles/main.css','app/dist/scripts/main.js'], cb)
@@ -78,9 +78,9 @@ gulp.task('watch', function() {
 
 gulp.task("serve", ['watch'], function() {
     browserSync.init({
-        server : "./app/"
+        server: "./app/"
     });
-    gulp.watch(["app/*.html","app/view/**/*.html"]).on("change", function() {
+    gulp.watch(["app/*.html", "app/view/**/*.html"]).on("change", function() {
         browserSync.reload;
     });
 });

@@ -1,32 +1,32 @@
 {
-  "name": "angular",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "itattoo",
-  "license": "ISC",
-  "devDependencies": {
-	    "browser-sync": "^2.18.2",
-	    "del": "^2.2.2",
-	    "del-gulpsass-blank-lines": "^0.1.3",
-	    "gulp": "^3.9.1",
-	    "gulp-autoprefixer": "^3.1.1",
-	    "gulp-cache": "^0.4.5",
-	    "gulp-clean-css": "^2.0.13",
-	    "gulp-concat": "^2.6.1",
-	    "gulp-imagemin": "^3.1.1",
-	    "gulp-jshint": "^2.0.4",
-	    "gulp-livereload": "^3.8.1",
-	    "gulp-minify-css": "^1.2.4",
-	    "gulp-notify": "^2.2.0",
-	    "gulp-rename": "^1.2.2",
-	    "gulp-ruby-sass": "^2.1.1",
-	    "gulp-sass": "^2.3.2",
-	    "gulp-sass-china": "^2.3.1",
-	    "gulp-uglify": "^2.0.0",
-	    "jshint": "^2.9.4"
-	  }
+    "name": "angular",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "itattoo",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.18.2",
+        "del": "^2.2.2",
+        "del-gulpsass-blank-lines": "^0.1.3",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-cache": "^0.4.5",
+        "gulp-clean-css": "^2.0.13",
+        "gulp-concat": "^2.6.1",
+        "gulp-imagemin": "^3.1.1",
+        "gulp-jshint": "^2.0.4",
+        "gulp-livereload": "^3.8.1",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-notify": "^2.2.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-ruby-sass": "^2.1.1",
+        "gulp-sass": "^2.3.2",
+        "gulp-sass-china": "^2.3.1",
+        "gulp-uglify": "^2.0.0",
+        "jshint": "^2.9.4"
+    }
 }

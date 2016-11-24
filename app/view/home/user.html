@@ -1,12 +1,11 @@
 <div ng-controller="userCtl">
-	<div class="fixed-header" style="top: 50px;">
-		<a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3]">
+    <div class="fixed-header" style="top: 50px;">
+        <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3]">
 			Go to anchor {{x}}
 		</a>
-	</div>
-
-	<div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
-		Anchor {{x}} of 5
-	</div>
-	<div textfrom></div>
+    </div>
+    <div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
+        Anchor {{x}} of 5
+    </div>
+    <div textfrom></div>
 </div>

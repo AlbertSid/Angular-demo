@@ -61,7 +61,7 @@ Main.controller('addCtl', ["$scope", "$rootScope",
 ]);
 
 Main.run(['$anchorScroll', function($anchorScroll) {
-    $anchorScroll.yOffset = 50; 
+    $anchorScroll.yOffset = 50;
     // always scroll by 50 extra pixels
 }]).controller('userCtl', [
     "$anchorScroll",
