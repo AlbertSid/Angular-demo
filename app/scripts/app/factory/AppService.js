@@ -1,4 +1,4 @@
-var AppService = angular.module("AppService", []);
+var AppService = angular.module("AppServiceModule", []);
 
 AppService.factory('MathFactory', function() {
 	var factory = {
@@ -12,8 +12,8 @@ AppService.factory('MathFactory', function() {
 	return factory;
 });
 
-AppService.factory('superCache', ['$cacheFactory', function($cacheFactory) {
-	// $cacheFactory('super-cache')这个是把值储存在内存中，一旦应用关闭，就会销毁该值。
+AppService.factory('SuperCache', ['$cacheFactory', function($cacheFactory) {
+	//这个是把值储存在内存中，一旦应用关闭，就会销毁该值。
 	return $cacheFactory('super-cache');
 }]);
 

@@ -1,14 +1,14 @@
 <!doctype html>
-<html xmlns:ng="http://angularjs.org" lang="cn" ng-app="July" id="ng-app">
+<html xmlns:ng="http://angularjs.org" lang="cn" ng-app="myApp" id="ng-app">
 
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--[if IE 8]>
-      	<script src="scripts/lib/ES/es5-shim.min.js"></script>
-		<script src="scripts/lib/ES/es5-sham.min.js"></script>
-		<script src="scripts/lib/ES/json3.min.js"></script>
+      	<script src="../app/scripts/lib/ES/es5-shim.min.js"></script>
+		<script src="../app/scripts/lib/ES/es5-sham.min.js"></script>
+		<script src="../app/scripts/lib/ES/json3.min.js"></script>
 	    <script type="text/javascript">
 		    if (!window.console || !console.firebug) {
 		        var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
@@ -23,14 +23,20 @@
 		<!-- lib -->
 		<link rel="stylesheet" href="scripts/lib/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="scripts/lib/bootstrap/css/bootstrap-theme.css">
-		<script src="scripts/lib/jquery/jquery.min.js"></script>
-		<script src="scripts/lib/angular/angular.min.js"></script>
-		<script src="scripts/lib/ui-router/angular-ui-router.min.js"></script>
-		<script src="scripts/lib/angular/angular-loader.min.js"></script>
-		<script src="scripts/lib/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="../app/scripts/lib/jquery/jquery.min.js"></script>
+		<script src="../app/scripts/lib/bootstrap/js/bootstrap.js"></script>
+		<script src="../app/scripts/lib/angular/angular.min.js"></script>
+		<script src="../app/scripts/lib/ui-router/angular-ui-router.min.js"></script>
+		<script src="../app/scripts/lib/angular/angular-loader.min.js"></script>
+		<script src="../app/scripts/lib/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
 		<!-- app -->
-		<link rel="stylesheet" href="dist/styles/main.css">
-		<script type="text/javascript" charset="utf-8" src="dist/scripts/main.js"></script>
+		<script src="test/index.js"></script>
+		<style type="text/css">
+			#root {
+				color: red;
+			}
+		</style>
 		<!--[if IE 8]>
     	<script src="scripts/lib/bootstrap/html5shiv.min.js"></script>
         <script src="scripts/lib/bootstrap/respond.js"></script>
@@ -51,8 +57,28 @@
     	<![endif]-->
 	</head>
 
-	<body ng-controller="RootCtl" onFinishRender>
-		<div ui-view class="container"></div>
+	<body style="background-color: #1C1C1C">
+		<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">W3CSchool</a>
+			</div>
+			<div class="nav nav-tabs">
+				<ul class="nav navbar-nav">
+					<li ui-sref-active="active" ui-sref="login">
+						<a href="">login</a>
+					</li>
+					<li ui-sref-active="active" ui-sref="home">
+						<a href="">home</a>
+					</li>
+					<li ui-sref-active="active" ui-sref="logout">
+						<a href="">退出系统</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid" style="width: 100%;">
+			<div ui-view id="root"></div>
+		</div>
 	</body>
 
 </html>

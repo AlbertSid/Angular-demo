@@ -1,0 +1,21 @@
+<h1>Page 1 content goes here...</h1>
+<h2>AngularJS Sample Application</h2>
+<div>
+	Enter a number:
+	<input class="form-control " type="number" ng-model="number" placeholder="请输入存储的value" />
+	<button class="btn btn-warning btn-sm" ng-click="square()">
+			X<sup>2</sup>
+		</button>
+	<span>Result: {{number || 0}} * {{number || 0}} = {{result || 0}}</span>
+	<br />
+	<input class="form-control " type="text" ng-model="setkey" placeholder="请输入存储的key" />
+	<button class="btn btn-warning btn-sm" ng-click="setValue(setkey,number)">setValue</button>
+	<br />
+	<input class="form-control " type="text" ng-model="getkey" placeholder="请输入获取的key" />
+	<button class="btn btn-warning btn-sm" ng-click="getValue(getkey)">getValue</button>
+	<br />
+	<input class="form-control " type="text" ng-model="removekey" placeholder="请输入删除的key" />
+	<button class="btn btn-warning btn-sm" ng-click="remove(removekey)">删除</button>
+	<br />
+	<button class="btn btn-warning btn-sm" ng-click="removeAll()">删除所有</button>
+</div>

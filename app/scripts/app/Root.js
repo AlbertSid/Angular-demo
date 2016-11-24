@@ -1,8 +1,8 @@
-angular.module('AngualrFormDamo', [
-	'AppService',
-	'AppDirect',
-	'RootAppCtl',
-	'mainBoxCtl'
+angular.module('July', [
+	'AppServiceModule',
+	'AppDirectModule',
+	'RootMoudle',
+	'MainBoxModule'
 ], ['$httpProvider', function($httpProvider) {
 	//console.log($httpProvider);
 }]).factory('$exceptionHandler', ['$injector', function($injector) {

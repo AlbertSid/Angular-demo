@@ -1,0 +1,15 @@
+<div ng-controller="MainBoxCtl">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0px">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="nav nav-tabs">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active" ui-sref=".main"><a href="">第一级 home</a></li>
+                <li ui-sref-active="active" ui-sref=".add"><a href="">第一级 add</a></li>
+                <li ui-sref-active="active" ui-sref=".user"><a href="">第一级 user</a></li>
+            </ul>
+        </div>
+    </nav>
+	<div ui-view style="padding-top: 100px;"></div>
+</div>

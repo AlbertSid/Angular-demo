@@ -2,7 +2,6 @@
  * gulp
  * $ npm install gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
  */
-// Load plugins
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -16,61 +15,66 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     browserSync = require("browser-sync"),
+    sass = require("gulp-sass-china"),
+    dgbl = require("del-gulpsass-blank-lines"),
     del = require('del');
-// Styles
+
 gulp.task('styles', function() {
-    return gulp.src('app/styles/main.scss')
-        .pipe(sass({ style: 'expanded', }))
+    return gulp.src('app/styles/*.scss')
+        .pipe(concat('main.scss'))
+        .pipe(sass({
+            outputStyle: 'compact'
+        }).on('error', sass.logError))
+        .pipe(dgbl())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('app/dist/styles'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('app/dist/styles'))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Styles task complete' }));
 });
-// Scripts
+
 gulp.task('scripts', function() {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src('app/scripts/app/**/*.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('dist/scripts'))
+        .pipe(gulp.dest('app/dist/scripts'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/scripts'))
+        .pipe(gulp.dest('app/dist/scripts'))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Scripts task complete' }));
 });
-// Images
+
 gulp.task('images', function() {
     return gulp.src('app/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('app/dist/images'))
         .pipe(browserSync.stream())
         .pipe(notify({ message: 'Images task complete' }));
 });
-// Clean
+
 gulp.task('clean', function(cb) {
-    del(['dist/main.css', 'dist/main.js', 'dist/*.png'], cb)
+    del(['app/dist/'], cb)
 });
-// Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images');
-});
-// Watch
+
+//gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean','styles','scripts','images'], function(cb) {
+    //gulp.start('styles','scripts','images');
+    //gulp.start(['styles','scripts','images']);
+    //del(['app/dist/styles/main.css','app/dist/scripts/main.js'], cb)
+})
+
 gulp.task('watch', function() {
-    // Watch .scss files
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    // Watch .js files
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
-    // Watch image files
+    gulp.watch('app/scripts/app/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
-    // Create LiveReload server
     livereload.listen();
-    // Watch any files in dist/, reload on change
-    gulp.watch(['dist/**']).on('change', livereload.changed);
+    gulp.watch(['app/dist/**']).on('change', livereload.changed);
 });
+
 
 gulp.task("serve", ['watch'], function() {
     browserSync.init({
